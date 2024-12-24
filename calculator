@@ -1,0 +1,48 @@
+# prices_calculator.py
+
+# Define the items and their prices
+items_prices = {
+    "item1": 10.99,
+    "item2": 5.49,
+    "item3": 7.99,
+    "item4": 12.99,
+    "item5": 3.49,
+    "item6": 8.99,
+    "item7": 4.99,
+    "item8": 6.99,
+    "item9": 11.99,
+    "item10": 2.99,
+    "item11": 14.99,
+    "item12": 1.99,
+    "item13": 9.99,
+    "item14": 13.99,
+    "item15": 15.99,
+    "item16": 16.99,
+    "item17": 19.99,
+    "item18": 20.99,
+    "item19": 21.99,
+    "item20": 22.99
+}
+
+# Function to calculate the total price
+def calculate_total(items_quantities):
+    total_price = 0.0
+    for item, quantity in items_quantities.items():
+        if item in items_prices:
+            total_price += items_prices[item] * quantity
+        else:
+            print(f"Item {item} not found.")
+    return total_price
+
+# Example usage
+if __name__ == "__main__":
+    # Example data: items and quantities bought by the customer
+    customer_items = {
+        "item1": 2,
+        "item3": 1,
+        "item5": 5,
+        "item10": 3
+    }
+    
+    total = calculate_total(customer_items)
+    print(f"The total price for the items purchased is: ${total:.2f}")
